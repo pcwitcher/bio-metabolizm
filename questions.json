@@ -1,0 +1,456 @@
+{
+  "title": "Metabolizm - Quiz",
+  "description": "Sprawdź swoją wiedzę z metabolizmu!",
+  "questions": [
+    {
+      "question": "Co oznacza pojęcie metabolizmu?",
+      "answers": [
+        "Całokształt reakcji chemicznych zachodzących w organizmie",
+        "Wyłącznie procesy rozkładu związków w komórce",
+        "Tylko wytwarzanie energii w mitochondriach",
+        "Proces wymiany gazowej w płucach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Które stwierdzenie najlepiej opisuje anabolizm?",
+      "answers": [
+        "Synteza związków z prostszych, zwykle z nakładem energii",
+        "Rozkład związków złożonych z uwolnieniem energii",
+        "Transport tlenu przez hemoglobinę",
+        "Usuwanie toksyn przez nerki"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Które stwierdzenie najlepiej opisuje katabolizm?",
+      "answers": [
+        "Rozkład związków złożonych do prostszych, zwykle z uwolnieniem energii",
+        "Budowanie białek na rybosomach bez udziału energii",
+        "Tworzenie glukozy wyłącznie w nocy",
+        "Magazynowanie wody w wakuoli"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jaką rolę pełni ATP w komórce?",
+      "answers": [
+        "Jest uniwersalnym nośnikiem energii w komórce",
+        "Jest materiałem budulcowym ściany komórkowej",
+        "Jest enzymem trawiącym białka",
+        "Jest pigmentem fotosyntetycznym"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co oznacza, że reakcja jest endoergiczna?",
+      "answers": [
+        "Wymaga dostarczenia energii z zewnątrz układu",
+        "Zawsze zachodzi spontanicznie bez energii",
+        "Zachodzi tylko w mitochondriach",
+        "Powoduje natychmiastowe uwolnienie ciepła"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Czym jest enzym?",
+      "answers": [
+        "Białkowym (lub RNA) katalizatorem przyspieszającym reakcje w komórce",
+        "Zapasową cząsteczką energii w komórce",
+        "Rodzajem lipidowej błony komórkowej",
+        "Produktem końcowym każdej reakcji metabolicznej"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co to jest centrum aktywne enzymu?",
+      "answers": [
+        "Miejsce wiązania substratu i przebiegu reakcji",
+        "Fragment enzymu odpowiedzialny za transport przez błonę",
+        "Obszar enzymu magazynujący ATP",
+        "Część enzymu tworząca ścianę komórkową"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak enzym wpływa na energię aktywacji reakcji?",
+      "answers": [
+        "Obniża energię aktywacji, przyspieszając reakcję",
+        "Podwyższa energię aktywacji, stabilizując substrat",
+        "Nie ma żadnego wpływu na energię aktywacji",
+        "Zamienia reakcję endoergiczną w egzoergiczną bez zmian warunków"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co jest substratem enzymu?",
+      "answers": [
+        "Związek, na który działa enzym i który ulega przemianie",
+        "Związek powstający zawsze na końcu reakcji",
+        "Cząsteczka, która blokuje enzym nieodwracalnie",
+        "Błona otaczająca enzym w cytoplazmie"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Które stwierdzenie o specyficzności enzymów jest prawdziwe?",
+      "answers": [
+        "Enzymy zwykle działają swoiście na określony substrat lub grupę podobnych substratów",
+        "Każdy enzym działa tak samo na wszystkie substraty",
+        "Enzymy nie rozpoznają kształtu cząsteczek",
+        "Specyficzność enzymów zależy wyłącznie od ilości ATP w komórce"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Na czym polega inhibicja kompetycyjna?",
+      "answers": [
+        "Inhibitor konkuruje z substratem o miejsce w centrum aktywnym",
+        "Inhibitor wiąże się wyłącznie z produktem reakcji",
+        "Inhibitor zwiększa szybkość reakcji przez stabilizację enzymu",
+        "Inhibitor zawsze niszczy enzym nieodwracalnie"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Czym jest inhibicja niekompetycyjna?",
+      "answers": [
+        "Inhibitor wiąże się poza centrum aktywnym, zmieniając aktywność enzymu",
+        "Inhibitor zajmuje centrum aktywne identycznie jak substrat",
+        "Inhibitor zwiększa stężenie substratu, by przyspieszyć reakcję",
+        "Inhibitor działa tylko w temperaturze 0°C"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co oznacza sprzężenie zwrotne ujemne w szlaku metabolicznym?",
+      "answers": [
+        "Produkt końcowy hamuje jeden z wcześniejszych etapów szlaku",
+        "Substrat końcowy pobudza wszystkie enzymy w szlaku",
+        "Enzym działa tylko wtedy, gdy brakuje tlenu",
+        "Szlak działa wyłącznie w świetle"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak temperatura wpływa na aktywność enzymów (w ujęciu ogólnym)?",
+      "answers": [
+        "Do pewnego optimum zwiększa aktywność, a zbyt wysoka może prowadzić do denaturacji",
+        "Im wyższa temperatura, tym zawsze szybciej działa enzym bez ograniczeń",
+        "Temperatura nie wpływa na enzymy, bo są katalizatorami",
+        "Aktywność rośnie tylko w temperaturach poniżej 0°C"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co może powodować denaturację enzymu białkowego?",
+      "answers": [
+        "Zbyt wysoka temperatura lub skrajne pH",
+        "Niskie stężenie substratu",
+        "Obecność wody w cytoplazmie",
+        "Wiązanie substratu w centrum aktywnym"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Na czym polega fotosynteza w najprostszym ujęciu?",
+      "answers": [
+        "Na wytwarzaniu związków organicznych z CO2 i H2O przy udziale energii świetlnej",
+        "Na rozkładzie glukozy do CO2 i H2O z uwolnieniem energii",
+        "Na pobieraniu gotowych związków organicznych z otoczenia",
+        "Na przekształcaniu tlenu w dwutlenek węgla w chloroplastach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Gdzie u roślin zachodzą reakcje świetlne fotosyntezy?",
+      "answers": [
+        "W błonach tylakoidów chloroplastów",
+        "W cytozolu komórki",
+        "W macierzy mitochondrialnej",
+        "W jądrze komórkowym"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Gdzie zachodzi cykl Calvina?",
+      "answers": [
+        "W stromie chloroplastu",
+        "W błonach komórkowych",
+        "W lizosomach",
+        "W aparacie Golgiego"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jaki gaz jest pobierany przez rośliny jako źródło węgla w fotosyntezie?",
+      "answers": [
+        "Dwutlenek węgla (CO2)",
+        "Tlen (O2)",
+        "Azot (N2)",
+        "Wodór (H2)"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co jest bezpośrednim źródłem tlenu uwalnianego w fotosyntezie?",
+      "answers": [
+        "Woda (H2O) rozkładana podczas reakcji świetlnych",
+        "Dwutlenek węgla (CO2) rozkładany w cyklu Calvina",
+        "Glukoza utleniana w chloroplastach",
+        "Azot z powietrza utleniany w liściach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Który czynnik najczęściej ogranicza intensywność fotosyntezy przy niskim natężeniu światła?",
+      "answers": [
+        "Natężenie światła",
+        "Stężenie tlenu w powietrzu",
+        "Zawartość soli kuchennej w glebie",
+        "Ciśnienie atmosferyczne jako jedyny czynnik"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak wzrost stężenia CO2 zwykle wpływa na intensywność fotosyntezy (do pewnego poziomu)?",
+      "answers": [
+        "Zwiększa intensywność fotosyntezy, aż do osiągnięcia nasycenia",
+        "Zawsze zmniejsza intensywność fotosyntezy",
+        "Nie wpływa, bo CO2 nie jest wykorzystywany w fotosyntezie",
+        "Powoduje zatrzymanie reakcji świetlnych natychmiast"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Dlaczego temperatura wpływa na tempo fotosyntezy?",
+      "answers": [
+        "Ponieważ wiele etapów (np. cykl Calvina) zależy od aktywności enzymów",
+        "Ponieważ zmienia barwę chlorofilu",
+        "Ponieważ zastępuje światło jako źródło energii",
+        "Ponieważ zatrzymuje dyfuzję CO2 w każdej temperaturze powyżej 10°C"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak otwieranie aparatów szparkowych wpływa na fotosyntezę?",
+      "answers": [
+        "Ułatwia pobieranie CO2, co może zwiększać intensywność fotosyntezy",
+        "Zawsze zmniejsza dopływ CO2 do liścia",
+        "Nie ma związku z wymianą gazową",
+        "Powoduje wzrost ciśnienia krwi w liściu"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak niedobór wody może pośrednio zmniejszać intensywność fotosyntezy?",
+      "answers": [
+        "Powoduje zamykanie aparatów szparkowych i ogranicza dopływ CO2",
+        "Zwiększa dostępność CO2 w liściu",
+        "Zwiększa liczbę chloroplastów w komórkach natychmiast",
+        "Zastępuje CO2 jako źródło węgla"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Na czym polega chemosynteza?",
+      "answers": [
+        "Na wytwarzaniu związków organicznych z CO2 przy wykorzystaniu energii z utleniania związków nieorganicznych",
+        "Na wytwarzaniu glukozy wyłącznie z tlenu i azotu",
+        "Na rozkładzie związków organicznych w świetle",
+        "Na pobieraniu gotowej materii organicznej z innych organizmów"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Które organizmy najczęściej przeprowadzają chemosyntezę?",
+      "answers": [
+        "Niektóre bakterie i archeony (chemoautotrofy)",
+        "Wyłącznie rośliny naczyniowe",
+        "Wyłącznie zwierzęta morskie",
+        "Grzyby saprotroficzne"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jakie związki mogą być źródłem energii w chemosyntezie?",
+      "answers": [
+        "Związki nieorganiczne, np. NH3, H2S, Fe2+",
+        "Wyłącznie glukoza",
+        "Wyłącznie tłuszcze",
+        "Wyłącznie białka"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jaką rolę pełni CO2 w chemosyntezie?",
+      "answers": [
+        "Jest źródłem węgla do syntezy związków organicznych",
+        "Jest produktem ubocznym utleniania glukozy",
+        "Jest inhibitorem, który zawsze blokuje chemosyntezę",
+        "Nie bierze udziału w chemosyntezie"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "W jakich środowiskach chemosynteza ma szczególne znaczenie?",
+      "answers": [
+        "Tam, gdzie brakuje światła, np. w głębinach oceanicznych",
+        "Wyłącznie na pustyniach w pełnym słońcu",
+        "Tylko w koronach drzew",
+        "Tylko w powietrzu na dużych wysokościach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Czym jest oddychanie komórkowe?",
+      "answers": [
+        "Proces uzyskiwania energii z utleniania związków organicznych w komórkach",
+        "Proces wymiany gazowej w płucach",
+        "Proces budowy glukozy z CO2",
+        "Transport ATP z jądra do cytoplazmy"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Gdzie zachodzi glikoliza?",
+      "answers": [
+        "W cytozolu (cytoplazmie) komórki",
+        "W jądrze komórkowym",
+        "W tylakoidach chloroplastów",
+        "W lizosomach"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jaki jest ostateczny akceptor elektronów w łańcuchu oddechowym przy oddychaniu tlenowym?",
+      "answers": [
+        "Tlen (O2)",
+        "Dwutlenek węgla (CO2)",
+        "Azot (N2)",
+        "Glukoza"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Gdzie w komórce eukariotycznej zachodzi cykl Krebsa?",
+      "answers": [
+        "W macierzy mitochondrialnej",
+        "W błonie komórkowej",
+        "W cytoplazmie przy rybosomach",
+        "W wakuoli"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jakie są główne produkty oddychania tlenowego (w ujęciu całościowym)?",
+      "answers": [
+        "CO2, H2O oraz energia magazynowana w ATP",
+        "Glukoza i tlen",
+        "Azot i amoniak",
+        "Mleczan i etanol jednocześnie w tej samej reakcji"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak nazywa się proces beztlenowego uzyskiwania energii z glukozy, w którym powstaje mleczan?",
+      "answers": [
+        "Fermentacja mlekowa",
+        "Cykl Calvina",
+        "Fosforylacja oksydacyjna",
+        "Beta-oksydacja"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak nazywa się proces beztlenowy prowadzący do powstania etanolu i CO2?",
+      "answers": [
+        "Fermentacja alkoholowa",
+        "Glikogenogeneza",
+        "Translacja",
+        "Fotosynteza"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jaka jest rola NADH/NAD+ w procesach fermentacyjnych?",
+      "answers": [
+        "Umożliwia odtworzenie NAD+ potrzebnego do kontynuacji glikolizy",
+        "Służy do magazynowania tlenu w komórce",
+        "Jest źródłem węgla do syntezy glukozy",
+        "Rozkłada ATP na ADP i fosforan"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Ile cząsteczek ATP (zwykle) netto powstaje w glikolizie z 1 cząsteczki glukozy?",
+      "answers": [
+        "2 ATP",
+        "1 ATP",
+        "10 ATP",
+        "36 ATP"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "W jakich warunkach komórki częściej uruchamiają fermentację?",
+      "answers": [
+        "Gdy brakuje tlenu lub jego dostępność jest niewystarczająca",
+        "Gdy jest nadmiar tlenu i światła",
+        "Gdy mitochondria produkują chlorofil",
+        "Tylko wtedy, gdy komórka nie ma cytoplazmy"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jaki jest podstawowy magazynowy polisacharyd u zwierząt?",
+      "answers": [
+        "Glikogen",
+        "Skrobia",
+        "Celuloza",
+        "Chityna"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Jak nazywa się rozkład kwasów tłuszczowych do acetylo-CoA w mitochondriach?",
+      "answers": [
+        "Beta-oksydacja",
+        "Fermentacja alkoholowa",
+        "Fosforylacja substratowa",
+        "Transkrypcja"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co jest wspólnym \"węzłem\" łączącym metabolizm cukrów, tłuszczów i wielu aminokwasów?",
+      "answers": [
+        "Acetylo-CoA",
+        "Chlorofil",
+        "DNA",
+        "Celuloza"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Co dzieje się z aminokwasami przed wykorzystaniem ich szkieletu węglowego do pozyskiwania energii?",
+      "answers": [
+        "Zwykle ulegają deaminacji (usunięciu grupy aminowej)",
+        "Zamieniają się bezpośrednio w tlen",
+        "Są magazynowane jako skrobia",
+        "Są przekształcane wyłącznie w chlorofil"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Który proces polega na syntezie glukozy z niecukrowych prekursorów (np. mleczanu, glicerolu)?",
+      "answers": [
+        "Glukoneogeneza",
+        "Glikoliza",
+        "Oddychanie tlenowe",
+        "Fermentacja mlekowa"
+      ],
+      "correct": 0
+    }
+  ]
+}

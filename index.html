@@ -1,38 +1,490 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/biol-plant/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Biologia Roślin</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="quizapp">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 50%, #40916c 100%);
+      min-height: 100vh;
+      color: #1b1b1b;
+    }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-  <title>quizapp</title>
-  <link rel="manifest" href="manifest.json">
+    /* --- Ekran startowy --- */
+    #start-screen {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .start-logo {
+      width: 500px;
+      max-width: 90vw;
+      height: auto;
+      border-radius: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    }
+
+    #start-screen h1 {
+      color: #fff;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    #start-screen p {
+      color: #d8f3dc;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .btn-primary {
+      background: #52b788;
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #40916c; }
+
+    .btn-secondary {
+      background: #fff;
+      color: #2d6a4f;
+    }
+
+    /* --- Karta pytania --- */
+    .quiz-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      animation: fadeIn 0.35s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .progress-bar {
+      background: #e9ecef;
+      border-radius: 8px;
+      height: 8px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(90deg, #52b788, #2d6a4f);
+      height: 100%;
+      border-radius: 8px;
+      transition: width 0.4s ease;
+    }
+
+    .question-counter {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      color: #212529;
+    }
+
+    .answers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .answer-btn {
+      width: 100%;
+      text-align: left;
+      padding: 14px 18px;
+      font-size: 1rem;
+      background: #f8f9fa;
+      border: 2px solid #dee2e6;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .answer-btn:hover:not(.disabled) {
+      background: #e8f5e9;
+      border-color: #52b788;
+    }
+
+    .answer-btn.correct {
+      background: #d4edda;
+      border-color: #28a745;
+      color: #155724;
+      font-weight: 600;
+    }
+
+    .answer-btn.wrong {
+      background: #f8d7da;
+      border-color: #dc3545;
+      color: #721c24;
+    }
+
+    .answer-btn.disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    .answer-btn.disabled.correct {
+      opacity: 1;
+    }
+
+    .next-area {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    /* --- Ekran wyników --- */
+    #result-screen {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .result-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 28px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .score-good { background: linear-gradient(135deg, #28a745, #52b788); }
+    .score-mid { background: linear-gradient(135deg, #ffc107, #fd7e14); }
+    .score-bad { background: linear-gradient(135deg, #dc3545, #e74c3c); }
+
+    .result-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .result-subtitle {
+      color: #6c757d;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+
+    .result-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* --- Przeglad odpowiedzi --- */
+    .review-section {
+      margin-top: 28px;
+      text-align: left;
+    }
+
+    .review-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid #dee2e6;
+    }
+
+    .review-item.review-correct { border-left-color: #28a745; }
+    .review-item.review-wrong { border-left-color: #dc3545; }
+
+    .review-question {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .review-answer {
+      font-size: 0.9rem;
+      color: #495057;
+    }
+
+    .review-answer .correct-label { color: #28a745; font-weight: 600; }
+    .review-answer .wrong-label { color: #dc3545; }
+
+    .hidden { display: none; }
+
+    @media (max-width: 500px) {
+      .container { padding: 12px; }
+      .quiz-card { padding: 24px 18px; }
+      #start-screen h1 { font-size: 1.6rem; }
+      .question-text { font-size: 1.1rem; }
+    }
+  </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <div class="container">
+
+    <!-- EKRAN STARTOWY -->
+    <div id="start-screen">
+      <img src="quiz_logo.png" alt="Quiz Logo" class="start-logo">
+      <h1 id="quiz-title">Quiz</h1>
+      <p id="quiz-desc">Ładowanie pytań...</p>
+      <button class="btn btn-primary" id="start-btn" onclick="startQuiz()">Rozpocznij quiz</button>
+    </div>
+
+    <!-- EKRAN QUIZU -->
+    <div id="quiz-screen" class="hidden">
+      <div class="quiz-card">
+        <div class="progress-bar">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+        <div class="question-counter" id="question-counter"></div>
+        <div class="question-text" id="question-text"></div>
+        <div class="answers-list" id="answers-list"></div>
+        <div class="next-area hidden" id="next-area">
+          <button class="btn btn-primary" onclick="nextQuestion()">Następne pytanie</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EKRAN WYNIKÓW -->
+    <div id="result-screen" class="hidden">
+      <div class="result-card">
+        <div class="score-circle" id="score-circle"></div>
+        <div class="result-title" id="result-title"></div>
+        <div class="result-subtitle" id="result-subtitle"></div>
+        <div class="result-buttons">
+          <button class="btn btn-primary" onclick="startQuiz()">Zagraj ponownie</button>
+          <button class="btn btn-secondary" onclick="showReview()">Zobacz odpowiedzi</button>
+        </div>
+        <div class="review-section hidden" id="review-section"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /* ============================================================
+       KONFIGURACJA
+       Zmień QUESTIONS_FILE na ścieżkę do innego pliku JSON,
+       aby podmienić zestaw pytań.
+       ============================================================ */
+    const QUESTIONS_FILE = 'questions.json';
+
+    let quizData = null;
+    let questions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let userAnswers = [];
+
+    // --- Ładowanie pytań ---
+    async function loadQuestions(src) {
+      try {
+        let data;
+        if (typeof src === 'string') {
+          const resp = await fetch(src);
+          if (!resp.ok) throw new Error('Nie udało się załadować pliku.');
+          data = await resp.json();
+        } else {
+          data = src;
+        }
+        quizData = data;
+        questions = data.questions || [];
+        document.getElementById('quiz-title').textContent = data.title || 'Quiz';
+        document.getElementById('quiz-desc').textContent = data.description || (questions.length + ' pytań');
+        document.getElementById('start-btn').classList.remove('hidden');
+      } catch (e) {
+        document.getElementById('quiz-desc').textContent = 'Błąd ładowania pytań: ' + e.message;
+      }
+    }
+
+    // --- Mieszanie odpowiedzi ---
+    function shuffleArray(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    // --- Start quizu ---
+    function startQuiz() {
+      if (!questions.length) return;
+      currentIndex = 0;
+      score = 0;
+      userAnswers = [];
+      // Przetasuj kolejność pytań
+      questions = shuffleArray(quizData.questions);
+      showScreen('quiz-screen');
+      renderQuestion();
+    }
+
+    // --- Renderowanie pytania ---
+    function renderQuestion() {
+      const q = questions[currentIndex];
+      const total = questions.length;
+
+      document.getElementById('progress-fill').style.width = ((currentIndex / total) * 100) + '%';
+      document.getElementById('question-counter').textContent = 'Pytanie ' + (currentIndex + 1) + ' z ' + total;
+      document.getElementById('question-text').textContent = q.question;
+
+      // Przetasuj odpowiedzi, ale zapamiętaj prawidłowy indeks
+      const correctAnswer = q.answers[q.correct];
+      const shuffled = shuffleArray(q.answers);
+
+      const list = document.getElementById('answers-list');
+      list.innerHTML = '';
+
+      shuffled.forEach(function(text, idx) {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.textContent = text;
+        btn.onclick = function() { selectAnswer(btn, text, correctAnswer, q); };
+        list.appendChild(btn);
+      });
+
+      document.getElementById('next-area').classList.add('hidden');
+    }
+
+    // --- Wybór odpowiedzi ---
+    function selectAnswer(btn, selected, correctAnswer, q) {
+      const buttons = document.querySelectorAll('.answer-btn');
+      buttons.forEach(function(b) { b.classList.add('disabled'); b.onclick = null; });
+
+      const isCorrect = selected === correctAnswer;
+      if (isCorrect) {
+        btn.classList.add('correct');
+        score++;
+      } else {
+        btn.classList.add('wrong');
+        // Pokaż prawidłową odpowiedź
+        buttons.forEach(function(b) {
+          if (b.textContent === correctAnswer) b.classList.add('correct');
+        });
+      }
+
+      userAnswers.push({
+        question: q.question,
+        selected: selected,
+        correct: correctAnswer,
+        isCorrect: isCorrect
+      });
+
+      if (currentIndex < questions.length - 1) {
+        document.getElementById('next-area').classList.remove('hidden');
+      } else {
+        setTimeout(showResult, 800);
+      }
+    }
+
+    // --- Następne pytanie ---
+    function nextQuestion() {
+      currentIndex++;
+      renderQuestion();
+    }
+
+    // --- Wynik ---
+    function showResult() {
+      showScreen('result-screen');
+
+      const total = questions.length;
+      const pct = Math.round((score / total) * 100);
+
+      const circle = document.getElementById('score-circle');
+      circle.textContent = score + '/' + total;
+      circle.className = 'score-circle ' + (pct >= 70 ? 'score-good' : pct >= 40 ? 'score-mid' : 'score-bad');
+
+      let title, subtitle;
+      if (pct >= 90) { title = 'Doskonale!'; subtitle = 'Masz świetną wiedzę z biologii roślin!'; }
+      else if (pct >= 70) { title = 'Bardzo dobrze!'; subtitle = 'Niewiele brakowało do perfekcji.'; }
+      else if (pct >= 50) { title = 'Nieźle!'; subtitle = 'Jest jeszcze nad czym popracować.'; }
+      else { title = 'Spróbuj ponownie'; subtitle = 'Powtórz materiał i wróć do quizu!'; }
+
+      document.getElementById('result-title').textContent = title;
+      document.getElementById('result-subtitle').textContent = subtitle;
+      document.getElementById('review-section').classList.add('hidden');
+    }
+
+    // --- Przegląd odpowiedzi ---
+    function showReview() {
+      const section = document.getElementById('review-section');
+      if (!section.classList.contains('hidden')) {
+        section.classList.add('hidden');
+        return;
+      }
+      section.innerHTML = '';
+      userAnswers.forEach(function(a, i) {
+        const div = document.createElement('div');
+        div.className = 'review-item ' + (a.isCorrect ? 'review-correct' : 'review-wrong');
+        div.innerHTML =
+          '<div class="review-question">' + (i + 1) + '. ' + escapeHtml(a.question) + '</div>' +
+          '<div class="review-answer">' +
+            (a.isCorrect
+              ? '<span class="correct-label">Twoja odpowiedź: ' + escapeHtml(a.selected) + '</span>'
+              : '<span class="wrong-label">Twoja odpowiedź: ' + escapeHtml(a.selected) + '</span><br>' +
+                '<span class="correct-label">Poprawna: ' + escapeHtml(a.correct) + '</span>'
+            ) +
+          '</div>';
+        section.appendChild(div);
+      });
+      section.classList.remove('hidden');
+    }
+
+    // --- Pomocnicze ---
+    function showScreen(id) {
+      ['start-screen', 'quiz-screen', 'result-screen'].forEach(function(s) {
+        document.getElementById(s).classList.toggle('hidden', s !== id);
+      });
+    }
+
+    function escapeHtml(text) {
+      const d = document.createElement('div');
+      d.textContent = text;
+      return d.innerHTML;
+    }
+
+    // --- Init ---
+    loadQuestions(QUESTIONS_FILE);
+  </script>
 </body>
 </html>
